@@ -18,7 +18,7 @@ mapfile -t < "$1"
 for VIDEO_ID in "${MAPFILE[@]}"; do
     VIDEO_ID="${VIDEO_ID//$'https://www.youtube.com/watch?v='/}"
     echo "${VIDEO_ID}"
-    python downloader.py --youtubeid="${VIDEO_ID}" --output="./output/${VIDEO_ID}.json"
+    python3 downloader.py --youtubeid="${VIDEO_ID}" --output="./output/${VIDEO_ID}.json"
 done
 
 
