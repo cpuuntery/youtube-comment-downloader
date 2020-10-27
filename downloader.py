@@ -240,7 +240,7 @@ def main(argv):
             sys.stdout.flush()
             start_time = time.time()
             for comment in download_comments(youtube_id):
-                comment_json = json.dumps(comment, ensure_ascii=False)
+                comment_json = json.dumps(comment, indent=4, ensure_ascii=False)
                 print(comment_json.decode('utf-8') if isinstance(comment_json, bytes) else comment_json, file=fp)
                 count += 1
                 sys.stdout.write('Downloaded %d comment(s)\r' % count)
